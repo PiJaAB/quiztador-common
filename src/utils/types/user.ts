@@ -1,13 +1,7 @@
 export interface PublicUser {
-  interpreterNumber?: string;
-  profilePictureHash?: string | null;
-  name?: string;
-  userLanguages?: string[];
-  userType?: string[];
   username?: string;
   role?: string;
   private?: never;
-  onboardingCompleted?: boolean;
 }
 
 export interface PrivateUser extends Omit<PublicUser, 'private'> {
