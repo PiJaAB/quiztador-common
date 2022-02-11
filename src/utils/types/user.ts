@@ -17,11 +17,3 @@ export interface PrivateUser extends Omit<PublicUser, 'private'> {
     notificationKey?: string | null;
   };
 }
-
-export type Category = {
-  name: string;
-  description: string;
-  weight: number;
-};
-
-export type Categories = Record<string, Category>;
