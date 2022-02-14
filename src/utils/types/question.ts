@@ -6,6 +6,7 @@ export type G_Question<PublicUserReference> = {
   wrongAnswer1: string;
   wrongAnswer2: string;
   wrongAnswer3: string;
+  status: string;
   author: PublicUserReference;
   nid: string;
 };
