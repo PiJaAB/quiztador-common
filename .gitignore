@@ -14,3 +14,4 @@ elasticSearchAuth.json
 *.bak
 
 /log
+*.log
