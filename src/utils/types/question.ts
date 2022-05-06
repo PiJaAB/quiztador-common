@@ -1,6 +1,7 @@
 export type G_Question<PublicUserReference> = {
+  id?: string;
   category: string;
-  question: string;
+  query: string;
   questionImage: string | null;
   correctAnswer: string;
   wrongAnswer1: string;
