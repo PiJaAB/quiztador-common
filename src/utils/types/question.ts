@@ -1,4 +1,5 @@
 export type G_Question<PublicUserReference> = {
+  id?: string;
   category: string;
   question: string;
   questionImage: string | null;
