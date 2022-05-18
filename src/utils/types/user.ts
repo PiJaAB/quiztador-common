@@ -15,5 +15,7 @@ export interface PrivateUser extends Omit<PublicUser, 'private'> {
     deviceTokens?: string[];
     subscribedTopics?: string[];
     notificationKey?: string | null;
+    gold?: number | null;
+    eloRating?: number | null;
   };
 }
