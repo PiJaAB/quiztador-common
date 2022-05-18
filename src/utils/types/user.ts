@@ -1,6 +1,8 @@
 export interface PublicUser {
   username?: string;
   role?: string;
+  gold?: number | null;
+  eloRating?: number | null;
   private?: never;
 }
 
@@ -15,7 +17,5 @@ export interface PrivateUser extends Omit<PublicUser, 'private'> {
     deviceTokens?: string[];
     subscribedTopics?: string[];
     notificationKey?: string | null;
-    gold?: number | null;
-    eloRating?: number | null;
   };
 }
