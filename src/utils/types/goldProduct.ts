@@ -8,5 +8,5 @@ export type GoldProduct = {
   price: number;
   adFreeSeconds: number;
   goldAmount: number;
-  bonusGoldAmount?: number;
+  bonusGoldAmount: number;
 }
