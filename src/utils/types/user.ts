@@ -1,7 +1,6 @@
 export interface PublicUser {
   username?: string;
   role?: string;
-  gold?: number | null;
   eloRating?: number | null;
   private?: never;
 }
@@ -12,6 +11,7 @@ export interface PrivateUser extends Omit<PublicUser, 'private'> {
     emailVerified: boolean;
     phoneNumber?: string;
     accessFlags?: Partial<Record<string, boolean>> | null;
+    gold?: number | null;
     tempPassword?: boolean;
     disabled: boolean;
     deviceTokens?: string[];
