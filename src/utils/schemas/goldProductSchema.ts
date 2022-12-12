@@ -10,4 +10,3 @@ const GoldProductSchema = z.object({
 });
 
 export default GoldProductSchema;
-
