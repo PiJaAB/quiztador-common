@@ -3,6 +3,7 @@ export type GoldProduct = {
   productID: string;
   price: number;
   adFreeSeconds: number;
+  adFreeMilliseconds: number;
   goldAmount: number;
   bonusGoldAmount: number;
 };
