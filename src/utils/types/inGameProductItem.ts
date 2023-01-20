@@ -4,12 +4,14 @@ import { z } from 'zod';
 const InGameProductItem = z.object({
   category: z.string(),
   imageUrl: z.string().optional(),
-  item: z.object({
-    color: z.string().optional(),
-    title: z.string(),
-    price: z.number(),
-  }).optional(),
+  item: z
+    .object({
+      color: z.string().optional(),
+      title: z.string(),
+      price: z.number(),
+    })
+    .optional(),
   unlockLevel: z.number(),
 });
 
-export default InGameProductItem ;
+export default InGameProductItem;
