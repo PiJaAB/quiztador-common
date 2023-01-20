@@ -14,4 +14,3 @@ const GameInviteSchema = z.object({
 });
 
 export default GameInviteSchema;
-
