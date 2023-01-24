@@ -1,3 +1,4 @@
+import { string } from 'zod';
 import { Category } from './category';
 import { Question } from './question';
 import { PublicUser } from './user';
@@ -10,18 +11,21 @@ export type ParticipantStatus =
   | 'Winner';
 
 export interface Participant {
-  user?: PublicUser;
+  user?: PublicUser & { uid: string };
   time: number;
   displayedTime: number;
   status: ParticipantStatus;
   displayedStatus: ParticipantStatus;
 }
 
+export type CategoryId = string;
+
 export interface QuestionRound {
-  selectingParticipant?: Participant;
+  selectingParticipantIndex?: number;
   category?: Category;
-  categoryOptions?: Category[];
+  categoryOptions?: CategoryId[];
   questions?: Question[];
+  completed: boolean;
   type: 'BuildUp' | 'KnockOut';
 }
 
@@ -31,8 +35,8 @@ export interface Game {
   rules: {
     buildUpRounds: number;
   };
-}
-
-export interface InviteeType {
-  name: string;
+  rounds: {
+    [roundNumber: string]: QuestionRound;
+  };
+  currentRoundNumber: number;
 }
