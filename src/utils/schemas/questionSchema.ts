@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import QuestionStatuses from './questionStatuses';
 
 const QuestionSchema = z.object({
   category: z.string(),
@@ -8,9 +9,9 @@ const QuestionSchema = z.object({
   wrongAnswer1: z.string(),
   wrongAnswer2: z.string(),
   wrongAnswer3: z.string(),
-  status: z.string(),
+  status: QuestionStatuses,
   author: z.string(),
-  nid: z.string(),
+  nid: z.string().nullable(),
 });
 
 export default QuestionSchema;
