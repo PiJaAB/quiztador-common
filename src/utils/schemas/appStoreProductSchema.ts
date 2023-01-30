@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const GoldProductSchema = z.object({
+const AppStoreProductSchema = z.object({
   title: z.string(),
   productID: z.string(),
   price: z.number(),
@@ -10,4 +10,4 @@ const GoldProductSchema = z.object({
   bonusGoldAmount: z.number(),
 });
 
-export default GoldProductSchema;
+export default AppStoreProductSchema;

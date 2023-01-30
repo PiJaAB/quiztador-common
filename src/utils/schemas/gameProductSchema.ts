@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 // E.g "Headgear"
-const InGameProductItem = z.object({
+const GameProductSchema = z.object({
   category: z.string(),
   imageUrl: z.string().optional(),
   item: z
@@ -9,9 +9,9 @@ const InGameProductItem = z.object({
       color: z.string().optional(),
       title: z.string(),
       price: z.number(),
-    })
-    .optional(),
+    }),
   unlockLevel: z.number(),
 });
 
-export default InGameProductItem;
+export default GameProductSchema;
+
