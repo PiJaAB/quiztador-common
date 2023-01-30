@@ -4,14 +4,15 @@ import QuestionStatuses from './questionStatuses';
 const QuestionSchema = z.object({
   category: z.string(),
   question: z.string(),
-  questionImage: z.string().nullable(),
+  questionImage: z.string().optional(),
   correctAnswer: z.string(),
   wrongAnswer1: z.string(),
   wrongAnswer2: z.string(),
   wrongAnswer3: z.string(),
   status: QuestionStatuses,
   author: z.string(),
-  nid: z.string().nullable(),
+  votes: z.number().optional(),
+  nid: z.string().optional(),
 });
 
 export default QuestionSchema;
