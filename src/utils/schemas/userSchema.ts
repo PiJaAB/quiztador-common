@@ -4,7 +4,7 @@ export const PublicUserSchema = z.object({
   username: z.string().optional(),
   role: z.string().optional(),
   eloRating: z.number().nullish(),
-  private: z.never(),
+  private: z.never().optional(),
 });
 
 export const AccessFlags = z.record(z.string(), z.boolean().optional()).nullish();
