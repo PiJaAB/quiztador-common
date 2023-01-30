@@ -7,7 +7,9 @@ export const PublicUserSchema = z.object({
   private: z.never().optional(),
 });
 
-export const AccessFlags = z.record(z.string(), z.boolean().optional()).nullish();
+export const AccessFlags = z
+  .record(z.string(), z.boolean().optional())
+  .nullish();
 
 export const PrivateUserMapSchema = z.object({
   email: z.string().optional(),
@@ -25,9 +27,10 @@ export const PrivateUserMapSchema = z.object({
   premiumEndDate: z.string().optional(),
 });
 
-export const PrivateUserSchema = PublicUserSchema.omit({ private: true }).extend({
+export const PrivateUserSchema = PublicUserSchema.omit({
+  private: true,
+}).extend({
   private: PrivateUserMapSchema,
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
 });
-

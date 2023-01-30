@@ -4,14 +4,12 @@ import { z } from 'zod';
 const GameProductSchema = z.object({
   category: z.string(),
   imageUrl: z.string().optional(),
-  item: z
-    .object({
-      color: z.string().optional(),
-      title: z.string(),
-      price: z.number(),
-    }),
+  item: z.object({
+    color: z.string().optional(),
+    title: z.string(),
+    price: z.number(),
+  }),
   unlockLevel: z.number(),
 });
 
 export default GameProductSchema;
-
