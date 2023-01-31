@@ -1,5 +1,5 @@
-import { Category } from './category';
-import { PublicUser } from './user';
+import { Category } from './Category';
+import { PublicUser } from './User';
 
 export type ParticipantStatus =
   | 'Pending'
