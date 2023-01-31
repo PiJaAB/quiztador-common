@@ -2,6 +2,9 @@ import { z } from 'zod';
 
 // E.g "Headgear"
 const GameProductSchema = z.object({
+  type: z
+    .union([z.literal('CONSUMABLE'), z.literal('NON-CONSUMABLE')])
+    .default('NON-CONSUMABLE'),
   category: z.string(),
   imageUrl: z.string().optional(),
   item: z.object({
