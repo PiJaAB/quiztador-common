@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import QuestionSchema from '../schemas/questionSchema';
 
-export type G_Question<PublicUserReference> = {
+export type G_Question = {
   id?: string;
   category: string;
   question: string;
@@ -11,7 +11,7 @@ export type G_Question<PublicUserReference> = {
   wrongAnswer2: string;
   wrongAnswer3: string;
   status: string;
-  author: PublicUserReference;
+  author: string;
   nid: string;
 };
 

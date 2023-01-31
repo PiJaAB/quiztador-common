@@ -1,4 +1,4 @@
 import { z } from 'zod';
 import GameInviteSchema from '../schemas/gameInviteSchema';
 
-export type GameInvite = z.infer<typeof GameInviteSchema>;
+export type GameInviteData = z.infer<typeof GameInviteSchema>;
