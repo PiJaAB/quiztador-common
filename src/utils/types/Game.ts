@@ -1,5 +1,4 @@
 import { Category } from './category';
-import { Question } from './question';
 import { PublicUser } from './user';
 
 export type ParticipantStatus =
