@@ -4,6 +4,8 @@ export const PublicUserSchema = z.object({
   username: z.string().optional(),
   role: z.string().optional(),
   eloRating: z.number().nullish(),
+  avatar: z.record(z.string(), z.string().nullish()),
+  gender: z.union([z.literal('male'), z.literal('female')]).optional(), // non-binary ...
   private: z.never().optional(),
 });
 
