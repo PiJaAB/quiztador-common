@@ -4,7 +4,7 @@ import QuestionStatuses from './questionStatuses';
 const QuestionSchema = z.object({
   category: z.string(),
   question: z.string(),
-  questionImage: z.string().optional(),
+  questionImage: z.string().nullish(),
   correctAnswer: z.string(),
   wrongAnswer1: z.string(),
   wrongAnswer2: z.string(),
