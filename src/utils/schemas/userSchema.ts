@@ -6,6 +6,7 @@ export const PublicUserSchema = z.object({
   eloRating: z.number().nullish(),
   avatar: z.record(z.string(), z.string().nullish()).optional(),
   gender: z.union([z.literal('male'), z.literal('female')]).optional(), // non-binary ...
+  friends: z.array(z.string()).optional(),
   private: z.never().optional(),
 });
 

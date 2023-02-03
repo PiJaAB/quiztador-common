@@ -6,3 +6,4 @@ export * from './Game';
 export * from './AppStoreProduct';
 export * from './GameProduct';
 export * from './UserOwnedGameProduct';
+export * from './FriendRequest';
