@@ -39,7 +39,7 @@ export interface QuestionRound {
 
 export interface Game {
   participants: Participant[];
-  type: 'Invite' | '2P-Queue' | '4P-Queue';
+  type: 'FromInvite' | '2P-Queue' | '4P-Queue';
   rules: {
     buildUpRounds: number;
   };
