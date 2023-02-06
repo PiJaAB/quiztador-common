@@ -19,7 +19,7 @@ const GameInviteSchema = z.object({
   // ),
   activeUids: z.array(z.string()),
   senderId: z.string(),
-  startedGameId: z.string().optional(),
+  startedGameId: z.string().nullish(),
 });
 
 export default GameInviteSchema;
