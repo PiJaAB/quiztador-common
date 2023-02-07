@@ -46,12 +46,6 @@ const SchemaDefEntries = makeSchemaDefEntries([
     },
   ],
   [
-    'Reward' as const,
-    {
-      category: z.enum(['reward']),
-    },
-  ],
-  [
     'Tactic' as const,
     {
       type: GameProductType.default('CONSUMABLE'),
