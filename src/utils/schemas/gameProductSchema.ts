@@ -71,13 +71,11 @@ export const GameProductCategories = GameProductCategorySchema.options
 /** Basic shared shape of all products */
 export const AbstractGameProductSchema = z.object({
   type: GameProductType.default('NON-CONSUMABLE'),
-  SKU: z.string(),
   category: GameProductCategorySchema,
   title: z.string(),
   description: z.string().nullish(),
   price: z.number(),
   imageUrl: z.string().nullish(),
-  bundledImage: z.string().nullish(),
 });
 
 const SchemaEntries = SchemaDefTuple(
