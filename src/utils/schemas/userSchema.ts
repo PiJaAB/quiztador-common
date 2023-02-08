@@ -7,6 +7,8 @@ export const PublicUserSchema = z.object({
   avatar: z.record(z.string(), z.string().nullish()).optional(),
   gender: z.union([z.literal('male'), z.literal('female')]).optional(), // non-binary ...
   friends: z.array(z.string()).optional(),
+  gamesWon: z.number().optional(),
+  gamesPlayed: z.number().optional(),
   private: z.never().optional(),
 });
 
