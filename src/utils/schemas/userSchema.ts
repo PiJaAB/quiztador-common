@@ -5,7 +5,7 @@ export const PublicUserSchema = z.object({
   role: z.string().optional(),
   eloRating: z.number().nullish(),
   avatar: z.record(z.string(), z.string().nullish()).optional(),
-  gender: z.union([z.literal('male'), z.literal('female')]).optional(), // non-binary ...
+  avatarStyle: z.enum(['masculine', 'feminine']).optional(),
   friends: z.array(z.string()).optional(),
   gamesWon: z.number().optional(),
   gamesPlayed: z.number().optional(),
