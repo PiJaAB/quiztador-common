@@ -8,7 +8,7 @@ import {
 
 const GameProductType = z.enum(['CONSUMABLE', 'NON-CONSUMABLE']);
 
-export const GameProductAvatarImageVariants = ['female', 'back'] as const;
+export const GameProductAvatarImageVariants = ['feminine', 'back'] as const;
 
 const imageVariantProps: {
   [key in `imageUrl_${typeof GameProductAvatarImageVariants[number]}`]: z.ZodNullable<
