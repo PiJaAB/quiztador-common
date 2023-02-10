@@ -6,7 +6,14 @@ export const PublicUserSchema = z.object({
   eloRating: z.number().nullish(),
   avatar: z.record(z.string(), z.string().nullish()).optional(),
   avatarStyle: z.enum(['masculine', 'feminine']).optional(),
-  friends: z.array(z.string()).optional(),
+  friends: z
+    .record(
+      z.string(),
+      z.object({
+        date: z.string(),
+      }),
+    )
+    .optional(),
   gamesWon: z.number().optional(),
   gamesPlayed: z.number().optional(),
   private: z.never().optional(),
