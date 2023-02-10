@@ -30,7 +30,7 @@ export const PrivateUserMapSchema = z.object({
   accessFlags: AccessFlags,
   gold: z.number().nullish(),
   tempPassword: z.boolean().nullish(),
-  deviceTokens: z.array(z.string()).optional(),
+  deviceToken: z.string().optional(),
   hasDeviceToken: z.boolean().optional(),
   subscribedTopics: z.array(z.string()).optional(),
   notificationKey: z.string().nullish(),
