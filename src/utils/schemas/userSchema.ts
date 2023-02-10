@@ -16,7 +16,6 @@ export const PublicUserSchema = z.object({
     .optional(),
   gamesWon: z.number().optional(),
   gamesPlayed: z.number().optional(),
-  private: z.never().optional(),
 });
 
 export const AccessFlags = z
@@ -29,6 +28,7 @@ export const PrivateUserMapSchema = z.object({
   phoneNumber: z.string().optional(),
   accessFlags: AccessFlags,
   gold: z.number().nullish(),
+  maxEloRating: z.number().nullish(),
   tempPassword: z.boolean().nullish(),
   deviceTokens: z.array(z.string()).optional(),
   hasDeviceToken: z.boolean().optional(),
@@ -39,9 +39,7 @@ export const PrivateUserMapSchema = z.object({
   premiumEndDate: z.string().optional(),
 });
 
-export const PrivateUserSchema = PublicUserSchema.omit({
-  private: true,
-}).extend({
+export const PrivateUserSchema = PublicUserSchema.extend({
   private: PrivateUserMapSchema,
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
