@@ -75,6 +75,7 @@ export const AbstractGameProductSchema = z.object({
   title: z.string(),
   description: z.string().nullish(),
   price: z.number(),
+  rewardOnly: z.boolean().default(false),
   imageUrl: z.string().nullish(),
 });
 
