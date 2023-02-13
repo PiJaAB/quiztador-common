@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { CategoriesMap } from './schemas/gameProductSchema';
 import {
   GameProduct,
@@ -7,7 +6,7 @@ import {
   GameProductCategoryType,
 } from './types/GameProduct';
 
-export function gameProductBelongToCategory<
+export default function gameProductBelongToCategory<
   Category extends GameProductCategory | GameProductCategoryType,
 >(
   category: Category,
