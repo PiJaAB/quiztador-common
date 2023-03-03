@@ -1,4 +1,7 @@
 export * from './userSchema';
+export * from './participantSchema';
+export * from './gameSchema';
+export * from './categorySchema';
 export * from './gameProductSchema';
 
 export { default as AppStoreProductSchema } from './appStoreProductSchema';
