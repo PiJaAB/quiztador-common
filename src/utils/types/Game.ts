@@ -60,6 +60,8 @@ export interface Game {
   completed: boolean;
   winner: UserId | null;
   participatingUids: UserId[];
+  slotsAvailable: boolean;
+  // lastInteraction: string;
 }
 
 // export interface GameAnswers {
