@@ -61,7 +61,6 @@ export interface Game {
   winner: UserId | null;
   participatingUids: UserId[];
   slotsAvailable: boolean;
-  // lastInteraction: string;
 }
 
 // export interface GameAnswers {

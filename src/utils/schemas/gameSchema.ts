@@ -41,6 +41,6 @@ export const GameSchema = z.object({
   participatingUids: z.array(z.string()),
   slotsAvailable: z.boolean(),
   createdAt: z.string(), // use when matching games
-  averageEloRating: z.number(),
-  lastInteraction: z.string().optional(),
+  averageEloRating: z.number().default(0),
+  totalEloRating: z.number().default(0),
 });
