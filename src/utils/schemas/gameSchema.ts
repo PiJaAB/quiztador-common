@@ -39,6 +39,7 @@ export const GameSchema = z.object({
   completed: z.boolean(),
   winner: z.string().nullable(),
   participatingUids: z.array(z.string()),
+  firstRoundHasBegun: z.boolean().default(false),
   slotsAvailable: z.boolean(),
   createdAt: z.string(), // use when matching games
   averageEloRating: z.number().default(0),
