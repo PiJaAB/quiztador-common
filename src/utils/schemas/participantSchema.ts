@@ -22,4 +22,6 @@ export const ParticipantSchema = z.object({
   status: ParticipantStatusSchema,
   displayedStatus: ParticipantStatusSchema,
   questionToAnswer: QuestionToAnswerSchema.optional(),
+  eloRatingChange: z.number().optional(),
+  goldChange: z.number().optional(),
 });
