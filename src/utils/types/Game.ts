@@ -14,13 +14,14 @@ export interface QuestionToAnswer {
   roundNumber: number;
 }
 
-export interface Participant {
+export interface Participant<Timestamp> {
   user?: PublicUser & { uid: string };
   timeMs: number;
   displayedTimeMs: number;
   status: ParticipantStatus;
   displayedStatus: ParticipantStatus;
   questionToAnswer?: QuestionToAnswer;
+  turnExpiresAt?: Timestamp;
 }
 
 export type CategoryId = string;
@@ -37,11 +38,12 @@ export interface QuestionRound {
   type: 'BuildUp' | 'KnockOut';
 }
 
-export interface Game {
-  participants: Participant[];
+export interface Game<Timestamp> {
+  participants: Participant<Timestamp>[];
   type: 'FromInvite' | '2P-Queue' | '4P-Queue';
   rules: {
     buildUpRounds: number;
+    allowedTimeMinutes: number;
   };
   rounds: {
     [roundNumber: string]: QuestionRound;
@@ -61,6 +63,7 @@ export interface Game {
   winner: UserId | null;
   participatingUids: UserId[];
   slotsAvailable: boolean;
+  updatedAt: Timestamp;
 }
 
 // export interface GameAnswers {
