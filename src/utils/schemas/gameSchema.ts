@@ -14,6 +14,7 @@ export const QuestionRoundSchema = z.object({
 
 export const GameSchema = z.object({
   participants: z.array(ParticipantSchema),
+  participantWhosTurnExpiresNext: z.string().nullish(),
   type: z.union([
     z.literal('FromInvite'),
     z.literal('2P-Queue'),
@@ -21,6 +22,7 @@ export const GameSchema = z.object({
   ]),
   rules: z.object({
     buildUpRounds: z.number(),
+    allowedTimeMinutes: z.number(),
   }),
   rounds: z.record(z.literal('roundNumber'), QuestionRoundSchema),
   currentRoundNumber: z.number(),
@@ -41,7 +43,7 @@ export const GameSchema = z.object({
   participatingUids: z.array(z.string()),
   firstRoundHasCategory: z.boolean().default(false),
   slotsAvailable: z.boolean(),
-  createdAt: z.string(), // use when matching games
+  createdAt: z.string(),
   averageEloRating: z.number().default(0),
   totalEloRating: z.number().default(0),
 });

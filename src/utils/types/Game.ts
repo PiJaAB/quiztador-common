@@ -21,6 +21,8 @@ export interface Participant<Timestamp> {
   status: ParticipantStatus;
   displayedStatus: ParticipantStatus;
   questionToAnswer?: QuestionToAnswer;
+  eloRatingChange?: number;
+  goldChange?: number;
   turnExpiresAt?: Timestamp;
 }
 
@@ -40,6 +42,7 @@ export interface QuestionRound {
 
 export interface Game<Timestamp> {
   participants: Participant<Timestamp>[];
+  participantWhosTurnExpiresNext?: string | null;
   type: 'FromInvite' | '2P-Queue' | '4P-Queue';
   rules: {
     buildUpRounds: number;
