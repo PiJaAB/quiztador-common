@@ -24,4 +24,5 @@ export const ParticipantSchema = z.object({
   questionToAnswer: QuestionToAnswerSchema.optional(),
   eloRatingChange: z.number().optional(),
   goldChange: z.number().optional(),
+  turnExpiresAt: z.string().optional(),
 });
