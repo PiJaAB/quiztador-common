@@ -1,6 +1,8 @@
 import { Category } from './Category';
 import { PublicUser } from './User';
 
+export type Tactics = '50-50' | 'addTime' | 'copyAnswer' | 'seeStats' | 'none';
+
 export type ParticipantStatus =
   | 'Pending'
   | 'Waiting'
@@ -51,13 +53,14 @@ export interface Game<Timestamp> {
   rounds: {
     [roundNumber: string]: QuestionRound;
   };
-  currentRoundNumber: number;
+  currentRoundNumber: string;
   answers: {
     [playerId: string]: {
-      [roundNumber: number]: {
+      [roundNumber: string]: {
         [questionId: string]: {
           timeMs: number;
           answer: number;
+          tacticUsed?: Tactics;
         };
       };
     };
