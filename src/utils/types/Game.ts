@@ -53,7 +53,7 @@ export interface Game<Timestamp> {
   rounds: {
     [roundNumber: string]: QuestionRound;
   };
-  currentRoundNumber: string;
+  currentRoundNumber: number;
   answers: {
     [playerId: string]: {
       [roundNumber: string]: {
