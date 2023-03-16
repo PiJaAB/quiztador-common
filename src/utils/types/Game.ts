@@ -60,7 +60,7 @@ export interface Game<Timestamp> {
         [questionId: string]: {
           timeMs: number;
           answer: number;
-          tacticUsed?: Tactics;
+          tacticsUsed?: Tactics[];
         };
       };
     };
