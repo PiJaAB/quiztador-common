@@ -14,7 +14,7 @@ export const QuestionRoundSchema = z.object({
 
 export const GameSchema = z.object({
   participants: z.array(ParticipantSchema),
-  participantWhosTurnExpiresNext: z.string().nullish(),
+  expiryTimeOnUserWhosTurnExpiresNext: z.string().nullish(),
   type: z.union([
     z.literal('FromInvite'),
     z.literal('2P-Queue'),
@@ -27,14 +27,24 @@ export const GameSchema = z.object({
   rounds: z.record(z.literal('roundNumber'), QuestionRoundSchema),
   currentRoundNumber: z.number(),
   answers: z.record(
-    z.literal(
-      'playerId',
+    z.literal('playerId'),
+    z.record(
+      z.literal('roundNumber'),
       z.record(
-        z.number(),
-        z.record(
-          z.literal('questionId'),
-          z.object({ timeMs: z.number(), answer: z.number() }),
-        ),
+        z.literal('questionId'),
+        z.object({
+          timeMs: z.number(),
+          answer: z.number(),
+          tacticsUsed: z
+            .union([
+              z.literal('50-50'),
+              z.literal('addTime'),
+              z.literal('copyAnswer'),
+              z.literal('seeStats'),
+              z.literal('none'),
+            ])
+            .optional(),
+        }),
       ),
     ),
   ),
@@ -46,4 +56,5 @@ export const GameSchema = z.object({
   createdAt: z.string(),
   averageEloRating: z.number().default(0),
   totalEloRating: z.number().default(0),
+  updatedAt: z.string(),
 });

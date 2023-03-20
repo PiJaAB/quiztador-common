@@ -17,7 +17,7 @@ export const ParticipantStatusSchema = z.union([
 
 export const ParticipantSchema = z.object({
   user: PublicUserSchema.extend({ uid: z.string() }).optional(),
-  timeMs: z.number(),
+  timeMs: z.number().default(0),
   displayedTimeMs: z.number(),
   status: ParticipantStatusSchema,
   displayedStatus: ParticipantStatusSchema,
