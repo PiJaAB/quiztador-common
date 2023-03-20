@@ -44,7 +44,7 @@ export interface QuestionRound {
 
 export interface Game<Timestamp> {
   participants: Participant<Timestamp>[];
-  participantWhosTurnExpiresNext?: string | null;
+  timeOnUserWhosTurnExpiresNext?: Timestamp | null;
   type: 'FromInvite' | '2P-Queue' | '4P-Queue';
   rules: {
     buildUpRounds: number;
