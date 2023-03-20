@@ -14,7 +14,7 @@ export const QuestionRoundSchema = z.object({
 
 export const GameSchema = z.object({
   participants: z.array(ParticipantSchema),
-  expiryTimeOnUserWhosTurnExpiresNext: z.string().nullish(),
+  timeOnUserWhosTurnExpiresNext: z.string().nullish(),
   type: z.union([
     z.literal('FromInvite'),
     z.literal('2P-Queue'),
