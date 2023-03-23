@@ -48,7 +48,7 @@ export const GameSchema = z.object({
       ),
     ),
   ),
-  completed: z.boolean(),
+  completed: z.boolean().default(false),
   winner: z.string().nullable(),
   participatingUids: z.array(z.string()),
   firstRoundHasCategory: z.boolean().default(false),

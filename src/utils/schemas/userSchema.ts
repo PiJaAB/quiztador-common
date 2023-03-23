@@ -16,6 +16,15 @@ export const PublicUserSchema = z.object({
     .optional(),
   gamesWon: z.number().optional(),
   gamesPlayed: z.number().optional(),
+  categoryStats: z
+    .record(
+      z.string(),
+      z.object({
+        correct: z.number().default(0),
+        wrong: z.number().default(0),
+      }),
+    )
+    .nullish(),
 });
 
 export const AccessFlags = z
