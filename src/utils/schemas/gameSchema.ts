@@ -56,5 +56,6 @@ export const GameSchema = z.object({
   createdAt: z.string(),
   averageEloRating: z.number().default(0),
   totalEloRating: z.number().default(0),
+  userStatsDistributed: z.boolean().nullish().default(false),
   updatedAt: z.string(),
 });
