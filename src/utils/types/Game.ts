@@ -69,6 +69,7 @@ export interface Game<Timestamp> {
   winner: UserId | null;
   participatingUids: UserId[];
   slotsAvailable: boolean;
+  userStatsDistributed?: boolean | null;
   updatedAt: Timestamp;
 }
 
