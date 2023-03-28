@@ -20,6 +20,8 @@ const QuestionSchema = z.object({
     countWrong2: z.number().default(0),
     countWrong3: z.number().default(0),
   }),
+  upvotes: z.number().default(0).nullish(),
+  downvotes: z.number().default(0).nullish(),
 });
 
 export default QuestionSchema;
