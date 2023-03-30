@@ -20,7 +20,6 @@ const AnswerQuestionParamsSchema = z.object({
         z.literal('copyAnswer'),
         z.literal('seeStats'),
         z.literal('none'),
-        z.literal(0),
       ]),
     )
     .optional(),
