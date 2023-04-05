@@ -13,13 +13,15 @@ const QuestionSchema = z.object({
   author: z.string(),
   votes: z.number().optional(),
   nid: z.string().optional(),
-  lastTenAnswers: z.array(z.number()).default([]),
-  answers: z.object({
-    countCorrect: z.number().default(0),
-    countWrong1: z.number().default(0),
-    countWrong2: z.number().default(0),
-    countWrong3: z.number().default(0),
-  }),
+  lastTenAnswers: z.array(z.number()).default([]).optional(),
+  answers: z
+    .object({
+      countCorrect: z.number().default(0),
+      countWrong1: z.number().default(0),
+      countWrong2: z.number().default(0),
+      countWrong3: z.number().default(0),
+    })
+    .optional(),
   upvotes: z.number().default(0).nullish(),
   downvotes: z.number().default(0).nullish(),
 });
