@@ -13,7 +13,10 @@ const QuestionSchema = z.object({
   author: z.string(),
   votes: z.number().optional(),
   nid: z.string().optional(),
-  lastTenAnswers: z.array(z.number()).default([]).optional(),
+  lastTenAnswers: z
+    .array(z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]))
+    .default([])
+    .optional(),
   answers: z
     .object({
       countCorrect: z.number().default(0),
