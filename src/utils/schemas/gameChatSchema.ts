@@ -43,8 +43,8 @@ export const GameChatSchema = z.object({
 const GameChatUserMetaData = z.record(
   z.string(),
   z.object({
-    lastReadMessageId: z.string(),
-    lastReadMessageTimestamp: z.string(),
+    lastReadMessageId: z.union([z.string(), z.number()]).optional(),
+    lastReadMessageTimestamp: z.string().optional(),
     unreadCount: z.number(),
   }),
 );
@@ -52,8 +52,8 @@ const GameChatUserMetaData = z.record(
 const GameChatMeta = z.record(
   z.string(),
   z.object({
-    latestMessageId: z.string(),
-    latestMessageTimestamp: z.string(),
+    latestMessageId: z.union([z.string(), z.number()]).optional(),
+    latestMessageTimestamp: z.string().optional(),
   }),
 );
 
