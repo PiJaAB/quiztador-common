@@ -26,6 +26,7 @@ export interface Participant<Timestamp> {
   eloRatingChange?: number;
   goldChange?: number;
   turnExpiresAt?: Timestamp;
+  timedOut?: boolean;
 }
 
 export type CategoryId = string;
