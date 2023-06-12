@@ -38,7 +38,6 @@ const SchemaDefEntries = makeSchemaDefEntries([
         'avatar-legs',
         'avatar-eyebrows',
         'avatar-hair-front',
-        'avatar-head',
         'avatar-collar',
         'avatar-glasses',
       ]),
