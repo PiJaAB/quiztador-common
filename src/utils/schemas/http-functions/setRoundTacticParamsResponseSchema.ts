@@ -5,4 +5,4 @@ const SetRoundTacticParamsResponseSchema = z.object({
   message: z.string().optional(),
 });
 
-export default SetRoundTacticParamsSchema;
+export default SetRoundTacticParamsResponseSchema;
