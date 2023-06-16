@@ -72,6 +72,11 @@ export interface Game<Timestamp> {
   slotsAvailable: boolean;
   userStatsDistributed?: boolean | null;
   updatedAt: Timestamp;
+  roundTacticsUsed?: {
+    [roundNumber: string]: {
+      [playerId: string]: Tactics[];
+    };
+  };
 }
 
 // export interface GameAnswers {
