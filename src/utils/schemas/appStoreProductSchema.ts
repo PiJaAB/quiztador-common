@@ -8,6 +8,7 @@ const AppStoreProductSchema = z.object({
   adFreeForever: z.boolean(),
   goldAmount: z.number(),
   bonusGoldAmount: z.number(),
+  createdAt: z.string(),
 });
 
 export default AppStoreProductSchema;
