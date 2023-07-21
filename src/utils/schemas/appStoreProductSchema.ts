@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 const AppStoreProductSchema = z.object({
   title: z.string(),
-  productID: z.string(),
+  productId: z.string(),
   price: z.number(),
   adFreeMilliseconds: z.number(),
   adFreeForever: z.boolean(),
