@@ -1,6 +1,6 @@
 {
   "name": "quiztador-common",
-  "version": "1.2.33",
+  "version": "1.2.34",
   "private": true,
   "main": "dist/index.js",
   "license": "UNLICENSED",
