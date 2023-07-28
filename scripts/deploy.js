@@ -1,4 +1,3 @@
-
 /* eslint-disable no-console,@typescript-eslint/no-var-requires */
 // eslint-disable-next-line import/no-extraneous-dependencies
 const execa = require('execa');

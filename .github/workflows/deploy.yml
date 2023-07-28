@@ -32,4 +32,4 @@ jobs:
       - name: Run deploy script
         run: |
           git config user.name "PiJa Deploy" && git config user.email "it@pija.se"
-          npm run deploy
+          pnpm run deploy
