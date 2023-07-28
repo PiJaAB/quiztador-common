@@ -1,6 +1,6 @@
-/* eslint-disable no-console,@typescript-eslint/no-var-requires */
+/* eslint-disable no-console */
 // eslint-disable-next-line import/no-extraneous-dependencies
-const execa = require('execa');
+import { execa } from 'execa';
 
 (async () => {
   try {

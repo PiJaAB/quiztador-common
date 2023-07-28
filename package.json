@@ -12,7 +12,7 @@
     "lint:prettier": "NODE_ENV=production prettier -c 'src/**/*.{js,jsx,ts,tsx,json}'",
     "lint:eslint": "NODE_ENV=production eslint src --report-unused-disable-directives --color",
     "lint:tsc": "NODE_ENV=production tsc --noEmit --pretty",
-    "deploy": "node scripts/deploy.js"
+    "deploy": "node scripts/deploy.mjs"
   },
   "nodemonConfig": {
     "ext": "d.ts,json",
