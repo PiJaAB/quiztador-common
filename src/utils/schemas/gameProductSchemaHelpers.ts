@@ -3,7 +3,7 @@ import { z } from 'zod';
 export function makeSchemaDefEntries<
   T extends readonly [
     readonly [string, unknown],
-    ...(readonly [string, unknown])[]
+    ...(readonly [string, unknown])[],
   ],
 >(defs: T): T {
   return defs;
@@ -15,7 +15,7 @@ export function CategoriesTuple<
     ...(readonly [
       unknown,
       { readonly category: z.ZodEnum<[string, ...string[]]> },
-    ])[]
+    ])[],
   ],
 >(tuple: Tuple): { -readonly [key in keyof Tuple]: Tuple[key][1]['category'] } {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25,7 +25,7 @@ export function CategoriesTuple<
 export function SchemaTuple<
   Tuple extends readonly [
     readonly [unknown, z.ZodObject<z.ZodRawShape>],
-    ...(readonly [unknown, z.ZodObject<z.ZodRawShape>])[]
+    ...(readonly [unknown, z.ZodObject<z.ZodRawShape>])[],
   ],
 >(tuple: Tuple): { -readonly [key in keyof Tuple]: Tuple[key][1] } {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -36,7 +36,7 @@ export function SchemaDefTuple<
   Base extends z.ZodObject<z.ZodRawShape>,
   Tuple extends readonly [
     readonly [unknown, z.ZodRawShape],
-    ...(readonly [unknown, z.ZodRawShape])[]
+    ...(readonly [unknown, z.ZodRawShape])[],
   ],
 >(
   base: Base,
@@ -44,13 +44,23 @@ export function SchemaDefTuple<
 ): {
   -readonly [key in keyof Tuple]: [
     Tuple[key][0],
-    Base extends z.ZodObject<infer T, infer UnknownKeys, infer Catchall>
+    Base extends z.ZodObject<
+      infer T extends z.ZodRawShape,
+      infer UnknownKeys,
+      infer Catchall
+    >
       ? z.ZodObject<
-          z.extendShape<T, Tuple[key][1]>,
+          z.objectUtil.extendShape<T, Tuple[key][1]>,
           UnknownKeys,
           Catchall,
-          z.objectOutputType<z.extendShape<T, Tuple[key][1]>, Catchall>,
-          z.objectInputType<z.extendShape<T, Tuple[key][1]>, Catchall>
+          z.objectOutputType<
+            z.objectUtil.extendShape<T, Tuple[key][1]>,
+            Catchall
+          >,
+          z.objectInputType<
+            z.objectUtil.extendShape<T, Tuple[key][1]>,
+            Catchall
+          >
         >
       : never,
   ];
