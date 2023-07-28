@@ -11,7 +11,7 @@ const GameProductType = z.enum(['CONSUMABLE', 'NON-CONSUMABLE']);
 export const GameProductAvatarImageVariants = ['feminine', 'back'] as const;
 
 const imageVariantProps: {
-  [key in `imageUrl_${typeof GameProductAvatarImageVariants[number]}`]: z.ZodNullable<
+  [key in `imageUrl_${(typeof GameProductAvatarImageVariants)[number]}`]: z.ZodNullable<
     z.ZodOptional<z.ZodString>
   >;
 } = Object.fromEntries(
@@ -89,16 +89,16 @@ type EntryToObj<T extends readonly [string, unknown]> = {
 };
 
 export const SchemaMap = Object.fromEntries(SchemaEntries) as {
-  [key in keyof EntryToObj<typeof SchemaEntries[number]>]: EntryToObj<
-    typeof SchemaEntries[number]
+  [key in keyof EntryToObj<(typeof SchemaEntries)[number]>]: EntryToObj<
+    (typeof SchemaEntries)[number]
   >[key];
 };
 
 export const CategoriesMap = Object.fromEntries(
   SchemaDefEntries.map(([key, value]) => [key, value.category.options]),
 ) as {
-  [key in keyof EntryToObj<typeof SchemaDefEntries[number]>]: EntryToObj<
-    typeof SchemaDefEntries[number]
+  [key in keyof EntryToObj<(typeof SchemaDefEntries)[number]>]: EntryToObj<
+    (typeof SchemaDefEntries)[number]
   >[key]['category']['options'];
 };
 
