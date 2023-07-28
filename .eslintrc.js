@@ -1,14 +1,13 @@
 module.exports = {
   root: true,
   extends: [
+    'airbnb-base',
     'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
-    'prettier',
-    'prettier/@typescript-eslint',
     'plugin:import/typescript',
   ],
-  plugins: ['@typescript-eslint', 'import', 'prettier'],
+  plugins: [],
   ignorePatterns: ['dist/*', '/noReact.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {

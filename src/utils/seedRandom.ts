@@ -9,9 +9,10 @@ export default function seedRandom(
   let seed =
     typeof seedInput === 'number'
       ? seedInput % modulus
-      : [...seedInput].reduce((acc, char) => {
-          return (acc + char.charCodeAt(0)) % modulus;
-        }, 0);
+      : [...seedInput].reduce(
+          (acc, char) => (acc + char.charCodeAt(0)) % modulus,
+          0,
+        );
   function next() {
     const returnVal = seed / modulus;
     seed = (a * seed + c) % modulus;
