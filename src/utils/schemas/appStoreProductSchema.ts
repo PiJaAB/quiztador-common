@@ -9,6 +9,7 @@ const AppStoreProductSchema = z.object({
   goldAmount: z.number().default(0),
   bonusGoldAmount: z.number().default(0),
   createdAt: z.string(),
+  published: z.boolean().default(false),
 });
 
 export default AppStoreProductSchema;
