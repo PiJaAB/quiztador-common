@@ -35,7 +35,8 @@ export const PrivateUserMapSchema = z.object({
   subscribedTopics: z.array(z.string()).optional(),
   notificationKey: z.string().nullish(),
   disabled: z.boolean(),
-  premium: z.boolean().optional(),
+  premium: z.boolean().optional().default(false),
+  premiumForever: z.boolean().optional().default(false),
   premiumEndDate: z.string().optional(),
 });
 
