@@ -1,4 +1,3 @@
-import { Category } from './Category';
 import { PublicUser } from './User';
 
 export type Tactics = '50-50' | 'addTime' | 'copyAnswer' | 'seeStats' | 'none';
@@ -32,11 +31,12 @@ export interface Participant<Timestamp> {
 export type CategoryId = string;
 export type QuestionId = string;
 export type UserId = string;
+type QuestionRoundCategory = string;
 
 export interface QuestionRound {
   selectingParticipantIndex?: number;
   selectingUid?: string;
-  category?: Category;
+  category?: QuestionRoundCategory;
   categoryOptions?: CategoryId[];
   questions?: QuestionId[];
   completed: boolean;
