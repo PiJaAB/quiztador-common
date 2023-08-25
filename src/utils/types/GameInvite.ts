@@ -15,5 +15,6 @@ export type GameInviteData<Timestamp> = z.infer<typeof GameInviteSchema> & {
   updatedAt: Timestamp;
   invitees: Invitee<Timestamp>[];
   startedGameId: string | null;
+  rematchFromGameId: string | null;
   completed: boolean;
 };
