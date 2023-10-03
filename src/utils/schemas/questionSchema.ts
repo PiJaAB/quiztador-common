@@ -11,6 +11,8 @@ const QuestionSchema = z.object({
   wrongAnswer3: z.string(),
   status: QuestionStatuses,
   author: z.string(),
+  createdAt: z.union([z.string(), z.date()]).optional(),
+  updatedAt: z.union([z.string(), z.date()]).optional(),
   votes: z.number().optional(),
   nid: z.string().optional(),
   lastTenAnswers: z
